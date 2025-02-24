@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('idPlatNomor', 10);
             $table->string('idUser', 10);
             $table->string('idLetakSetir', 10);
-            $table->string('negara_asal', 5);
+            $table->string('negara_asal', 5)->nullable();
             $table->string('namaMobil');
             $table->string('kode_body', 10);
             $table->year('tahun_mobil');
