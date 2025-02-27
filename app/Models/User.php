@@ -73,4 +73,8 @@ class User extends Authenticatable
     public function setLogMobil(){
         return $this->hasMany(LogMobil::class, 'idUser', 'logMobilID');
     }
+
+    public function setLogUser(){
+        return $this->hasMany(LogUser::class, 'idUser', 'logUserID');
+    }
 }

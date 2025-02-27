@@ -6,30 +6,25 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LogMobil extends Model
+class LogUser extends Model
 {
     use HasFactory, HasUuids;
-    protected $table = 'log_mobil';
-    protected $primaryKey = 'logMobilID';
+    protected $table = 'log_user';
+    protected $primaryKey = 'logUserID';
     protected $keyType = 'string';
     public $incrementing = false;
     protected $fillable = [
-        'logMobilID',
-        'idMobil',
+        'logUserID',
         'idUser',
         'keterangan',
         'norec',
     ];
 
     protected $casts = [
-        'logMobilID' => 'string',
+        'logLoginID' => 'string',
     ];
 
-    public function getUser(){
+    public function getUserID(){
         return $this->belongsTo(User::class, 'idUser', 'userID');
-    }
-
-    public function getMobil(){
-        return $this->belongsTo(Mobil::class, 'idMobil', 'mobilID');
     }
 }

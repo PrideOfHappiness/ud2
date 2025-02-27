@@ -17,5 +17,15 @@ class Jenis extends Model
         'deskripsi',
     ];
 
-    
+    public function setJenisCampur(){
+        return $this->hasMany(JenisCampur::class, 'idJenis', 'jenisCampurID');
+    }
+
+    public function setFotoJenis(){
+        return $this->hasMany(FotoJenis::class, 'idJenis', 'fotoJenisID');
+    }
+
+    public function setMobil(){
+        return $this->hasMany(Mobil::class, 'idJenis', 'MobilID');
+    }
 }

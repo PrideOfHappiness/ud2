@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JenisCampur extends Model
+class FotoJenis extends Model
 {
     use HasFactory;
 
-    protected $table = 'jenis_campur';
-    protected $primaryKey = 'jenisCampurID';
+    protected $table = 'foto_jenis';
+    protected $primaryKey = 'fotoJenisID';
     public $incrementing = false;
     protected $fillable = [
-        'jenisCampurID',
+        'fotoJenisID',
         'idJenis',
-        'stringGabungan',
+        'namaFile',
     ];
 
     public function getJenis(){

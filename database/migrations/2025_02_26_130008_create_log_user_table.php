@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('log_mobil', function (Blueprint $table) {
-            $table->uuid('logMobilID')->primary();
-            $table->string('idMobil', 10);
+        Schema::create('log_user', function (Blueprint $table) {
+            $table->uuid('logUserID')->primary();
             $table->string('idUser', 10);
             $table->text('keterangan');
             $table->string('norec', 50);
             $table->timestamps();
 
             $table->foreign('idUser')->references('userID')->on('users')->onDelete('no action')->onUpdate('cascade');
-            $table->foreign('idMobil')->references('mobilID')->on('mobil')->onDelete('no action')->onUpdate('cascade');
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('log_mobil');
+        Schema::dropIfExists('log_user');
     }
 };
